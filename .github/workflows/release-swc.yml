@@ -15,6 +15,11 @@ env:
   PNPM_VERSION: 7.5.2
 
 jobs:
+  run_if:
+      if:  startsWith(github.head_ref, 'release/swc')
+      runs-on: ubuntu-18.04
+      steps:
+        - run: echo "The head of this PR starts with 'releases/'"
   test-unit:
     name: Unit Test Native Code
     runs-on: ubuntu-18.04
