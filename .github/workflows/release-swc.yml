@@ -2,8 +2,8 @@ on:
   pull_request:
     branches:
       - release/swc-*
-    paths:
-      - 'packages/compiler-swc/package.json' 
+    # paths:
+    #   - 'packages/compiler-swc/package.json' 
 
 name: Test and Release SWC binary
 
