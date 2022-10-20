@@ -29,7 +29,7 @@ export default async function main(argv: string[]) {
     .option('--target <target>', 'specify the app output target. eg: spa')
     .option(
       '--router-history <history>',
-      "specify the hisotry type. 'browser' or 'hash'"
+      "specify the history type. 'browser' or 'hash'"
     )
     .option('--analyze', 'generate html file to help analyze webpack bundle')
     .option('--config <file>', 'path to config file')
