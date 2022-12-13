@@ -3,8 +3,8 @@ on:
     branches:
       - main
     types: [opened]
-    paths:
-      - 'packages/compiler-swc/package.json'
+    # paths:
+    #   - 'packages/compiler-swc/package.json'
 
 name: Test and Release SWC binary
 
