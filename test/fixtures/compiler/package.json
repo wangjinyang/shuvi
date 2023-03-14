@@ -9,5 +9,9 @@
   },
   "devDependencies": {
     "@swc/plugin-transform-imports": "0.8.4"
-  }
+  },
+  "browserslist": [
+    "defaults and supports es6-module",
+    "maintained node versions"
+  ]
 }

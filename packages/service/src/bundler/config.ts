@@ -4,6 +4,7 @@ import {
   createNodeWebpackChain
 } from '@shuvi/toolpack/lib/webpack/config';
 import { CompilerOptions } from '@shuvi/toolpack/lib/webpack/loaders/shuvi-swc-loader';
+import { getSupportedBrowsers } from '@shuvi/toolpack/lib/utils/getSupportedBrowsers';
 import { IPluginContext } from '../core';
 import { getJavaScriptInfo } from './typescript';
 
@@ -45,6 +46,7 @@ export function createWebpackConfig(
   const lightningCss = !!config.experimental.lightningCss;
   const experimental = config.experimental;
   const jsConfig = getJavaScriptInfo();
+  const supportedBrowsers = getSupportedBrowsers(paths.appDir, dev, config);
   const compiler: CompilerOptions = {
     ...config.compiler,
     modularizeImports: experimental.modularizeImports,
@@ -68,6 +70,7 @@ export function createWebpackConfig(
       lightningCss,
       compiler,
       jsConfig,
+      supportedBrowsers,
       include,
       env
     });
@@ -82,6 +85,7 @@ export function createWebpackConfig(
       lightningCss,
       compiler,
       jsConfig,
+      supportedBrowsers,
       include,
       env,
       analyze: config.analyze

@@ -30,6 +30,7 @@ export interface BaseOptions {
     compilerOptions: TsCompilerOptions;
     resolvedBaseUrl: string;
   };
+  supportedBrowsers: string[] | undefined;
   target?: string;
   publicPath?: string;
   env?: {
@@ -92,6 +93,7 @@ export function baseWebpackChain({
   projectRoot,
   include,
   jsConfig,
+  supportedBrowsers,
   name,
   publicPath = '/',
   env = {},
@@ -205,7 +207,7 @@ export function baseWebpackChain({
     .options({
       isServer: false,
       compiler,
-      supportedBrowsers: false,
+      supportedBrowsers,
       swcCacheDir: path.join(cacheDir, 'swc')
     });
 

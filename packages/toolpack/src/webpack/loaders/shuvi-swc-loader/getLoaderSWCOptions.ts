@@ -52,7 +52,7 @@ export type SWCLoaderOptions = {
   development: boolean;
   minify: boolean | Obj;
   hasReactRefresh: boolean;
-  supportedBrowsers: any[];
+  supportedBrowsers: string[] | undefined;
   swcCacheDir: string;
   compiler: CompilerOptions;
 };
@@ -247,11 +247,11 @@ SWCLoaderOptions) {
   } else {
     // Matches default @babel/preset-env behavior
     (baseOptions.jsc as any).target = 'es5';
-    if (supportedBrowsers && supportedBrowsers.length > 0) {
-      (baseOptions as any).env = {
-        targets: supportedBrowsers
-      };
-    }
+    // if (supportedBrowsers && supportedBrowsers.length > 0) {
+    //   (baseOptions as any).env = {
+    //     targets: supportedBrowsers
+    //   };
+    // }
   }
   return baseOptions;
 }

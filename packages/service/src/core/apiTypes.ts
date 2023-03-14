@@ -175,7 +175,7 @@ export interface InternalConfig {
   experimental: {
     lightningCss: boolean;
     preBundle: boolean;
-    // browsersListForSwc?: boolean;
+    legacyBrowsers?: boolean;
     modularizeImports?: CompilerOptions['modularizeImports'];
     swcPlugins?: CompilerOptions['swcPlugins'];
   };
